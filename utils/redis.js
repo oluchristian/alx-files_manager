@@ -22,9 +22,10 @@ class RedisClient {
         } else {
           resolve(value);
         }
-        });
+      });
     });
   }
+
   async set(key, value, duration) {
     // Asynchronous function to set a value with an expiration duration
     return new Promise((resolve, reject) => {
@@ -34,17 +35,18 @@ class RedisClient {
         } else {
           resolve(reply);
         }
-        });
+      });
     });
   }
+
   async del(key){
     // Asynchronous function to delete a value for a given key
     return new Promise((resolve, reject) => {
       this.client.del(key, (err, reply) => {
         if (err) {
-                reject(err);
+          reject(err);
         } else {
-                resolve(reply);
+          resolve(reply);
         }
       });
     });
