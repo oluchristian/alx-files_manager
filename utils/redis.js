@@ -39,7 +39,7 @@ class RedisClient {
     });
   }
 
-  async del(key){
+  async del(key) {
     // Asynchronous function to delete a value for a given key
     return new Promise((resolve, reject) => {
       this.client.del(key, (err, reply) => {
